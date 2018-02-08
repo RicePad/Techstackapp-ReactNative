@@ -1,37 +1,30 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {  Platform, StyleSheet, Text, View} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+// Redux SetUp
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './src/reducers';
 
-type Props = {};
-export default class App extends Component<Props> {
+const store = createStore(reducers);
+
+
+
+
+ class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Text>Hello TechSTack</Text>
+        </View>
+      </Provider>
     );
   }
 }
+
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -51,3 +44,6 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+
+export default App;
