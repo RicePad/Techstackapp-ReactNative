@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import fetchStack from './fetch_stacks_reducer';
+import LibraryList from './library_list_reducer';
 
 
 
 export default combineReducers({
-	fetchStack
+	libraries: LibraryList
 })
