@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {  Platform, StyleSheet, Text, View} from 'react-native';
 import Header from './src/components/Header';
+import LibraryList from './src/components/LibraryList';
 // Redux SetUp
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -16,6 +17,7 @@ console.log('store.getState()', store.getState())
       <Provider store={store}>
         <View>
           <Header headerText="Hello TechStack!" />
+          <LibraryList />
         </View>
       </Provider>
     );
